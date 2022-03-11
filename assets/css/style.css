@@ -60,7 +60,7 @@ header img {
 	height: fit-content;
 	padding: 10px 50px 10px 10px;
 	color: #fff;
-	font-weight: bold;
+	font-weight: 600;
 	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
     box-sizing: border-box;
 }
@@ -100,7 +100,7 @@ main {
 }
 
 #quiz-score {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 #quiz-character-image-wrapper {
