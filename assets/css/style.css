@@ -1,0 +1,33 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: none;
+    background-color: rgb(37, 37, 37);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: rgb(236, 236, 236);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: chocolate;
+}
+
+header a,
+header a:hover,
+header a:focus {
+    text-decoration: none;
+}
+
+.site-name {
+    display: none;
+}
+
+footer {
+    text-align: center;
+}

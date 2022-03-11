@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    {% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+    <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#962cb4">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="msapplication-TileColor" content="#962cb4">
+    <meta name="theme-color" content="#ffffff">
+    <script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/starquiz_logo.png' | relative_url }}"><h1 class="site-name">{{ site.title | default: site.github.repository_name }}</h1></a>
+      <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
+    </header>
+    <main id="content" class="main-content" role="main">
+        <div id="quiz-wrapper">
+            <span id="quiz-score"></span>
+            <img id="quiz-character-image" src="">
+            <h3 id="quiz-character-name"></h3>
+            <p id="quiz-question"></p>
+            <div id="quiz-propositions">
+                <button id="quiz-proposition1"></button>
+                <button id="quiz-proposition2"></button>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p class="copyright"><b>{{ site.title | default: site.github.repository_name }}</b> maintained by
+        {% for maintainer in site.maintainers %}
+        <a href="{{ maintainer.url }}" target="_blank" rel="external noopener noreferrer">{{ maintainer.name }}</a>
+        {% endfor %}
+        - <a href="{{ site.license.url }}" target="_blank">Website code under license {{ site.license.name }}</a></p>
+    </footer>
+  </body>
+</html>
