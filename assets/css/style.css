@@ -75,10 +75,11 @@ main {
     width: fit-content;
     height: fit-content;
     display: grid;
-	flex-direction: column;
+    grid-template-rows: auto 1fr auto auto auto;
 	place-items: center;
 	justify-content: center;
 	max-width: 30rem;
+    max-height: calc(100vh - 2.25rem);
 	overflow-x: hidden;
 }
 
@@ -105,12 +106,16 @@ main {
     border: .5rem solid #2f2f2f;
     box-sizing: border-box;
     border-radius: .5rem;
+    text-align: center;
 }
 
 #quiz-character-image {
+    width: auto;
+	height: inherit;
     max-width: 100%;
 	max-height: 100%;
 	border-radius: .5rem;
+	
 }
 
 #quiz-character-name {
