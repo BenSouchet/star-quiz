@@ -24,8 +24,8 @@
     </header>
     <main id="content" class="main-content" role="main">
         <div id="quiz-wrapper">
-            <span id="quiz-score">12</span>
-            <img id="quiz-character-image" src="https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg">
+            <span id="quiz-score-wrapper">Score: <span id="quiz-score">12</span></span>
+            <div id="quiz-character-image-wrapper"><img id="quiz-character-image" src="https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"></div>
             <h3 id="quiz-character-name">Luke Skywalker</h3>
             <p id="quiz-question">Which one was a master of this character?</p>
             <div id="quiz-propositions">
@@ -35,11 +35,7 @@
         </div>
     </main>
     <footer class="site-footer">
-        <p class="copyright">Maintained by
-        {% for maintainer in site.maintainers %}
-        <a href="{{ maintainer.url }}" target="_blank" rel="external noopener noreferrer">{{ maintainer.name }}</a>
-        {% endfor %}
-        - License <a href="{{ site.license.url }}" target="_blank"></a>{{ site.license.name }}</a></p>
+        <p class="copyright">&copy; {{ site.github.owner.name }} - License <a href="{{ site.license.url }}" target="_blank"></a>{{ site.license.name }}</a></p>
     </footer>
   </body>
 </html>
