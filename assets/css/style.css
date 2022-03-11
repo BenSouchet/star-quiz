@@ -21,6 +21,7 @@ body, header, main, footer {
 
 header {
     grid-row: 1;
+    grid-column: 1;
     display: grid;
     grid-template-columns: 1fr auto;
     justify-self: center;
@@ -63,16 +64,72 @@ header img {
 
 main {
     grid-row: 1;
+    grid-column: 1;
     display: flex;
     place-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 #quiz-wrapper {
     width: fit-content;
     height: fit-content;
+    display: grid;
+	flex-direction: column;
+	place-items: center;
+	justify-content: center;
+	max-width: 30rem;
+	overflow-x: hidden;
+}
+
+#quiz-score {
+    width: 100%;
+	font-size: 1.4rem;
+	color: #252525;
+	text-align: center;
+	background-color: #c5870c;
+	padding: 0.4rem;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin-bottom: 1rem;
+	border: 0.5rem solid #d09625;
+}
+
+#quiz-character-image-wrapper {
+    width: 100%;
+    background-color: #2f2f2f;
+    border: .5rem solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: .5rem;
+}
+
+#quiz-character-image {
+    max-width: 100%;
+	max-height: 100%;
+	border-radius: .5rem;
+}
+
+#quiz-character-name {
+    width: 100%;
+    background-color: #2f2f2f;
+    border: .5rem solid #2f2f2f;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 1rem 0;
 }
 
 footer {
     text-align: center;
+    margin: 0 auto;
+	padding: 0.6rem 1.2rem;
+	width: fit-content;
+	border-radius: 0.5rem 0.5rem 0 0;
+	background-color: #3e1e5e;
+    box-sizing: border-box;
+}
+
+footer p {
+    font-size: .9rem;
+    margin: 0;
 }

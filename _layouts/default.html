@@ -35,11 +35,11 @@
         </div>
     </main>
     <footer class="site-footer">
-        <p class="copyright"><b>{{ site.title | default: site.github.repository_name }}</b> maintained by
+        <p class="copyright">Maintained by
         {% for maintainer in site.maintainers %}
         <a href="{{ maintainer.url }}" target="_blank" rel="external noopener noreferrer">{{ maintainer.name }}</a>
         {% endfor %}
-        - <a href="{{ site.license.url }}" target="_blank">Website code under license {{ site.license.name }}</a></p>
+        - License <a href="{{ site.license.url }}" target="_blank"></a>{{ site.license.name }}</a></p>
     </footer>
   </body>
 </html>
