@@ -1,3 +1,5 @@
+@import url('./fredoka.css');
+
 
 html, body {
     margin: 0;
@@ -8,6 +10,7 @@ html, body {
 
 body {
     display: grid;
+    font-family: 'Fredoka', sans-serif;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
     margin: 0 auto;

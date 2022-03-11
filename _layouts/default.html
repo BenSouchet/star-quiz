@@ -5,7 +5,8 @@
     {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link href="{{ '/assets/fonts/fredoka/latin.woff2'| relative_url }}" rel="preload" as="font" type="font/woff2" crossOrigin="anonymous">
+    <link href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" rel="stylesheet preload prefetch" as="style" type="text/css">
     <link rel="apple-touch-icon" sizes="120x120" href="{{ '/apple-touch-icon.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
