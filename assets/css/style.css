@@ -74,12 +74,12 @@ main {
 #quiz-wrapper {
     width: fit-content;
     height: fit-content;
-    display: grid;
-    grid-template-rows: auto 1fr auto auto auto;
+    display: flex;
+    flex-direction: column;
 	place-items: center;
 	justify-content: center;
 	max-width: 30rem;
-    max-height: calc(100vh - 2.25rem);
+    max-height: calc(100vh - 6rem);
 	overflow-x: hidden;
 }
 
@@ -101,6 +101,7 @@ main {
 }
 
 #quiz-character-image-wrapper {
+    max-height: calc(100vh - 20rem);
     width: 100%;
     background-color: #2f2f2f;
     border: .5rem solid #2f2f2f;
@@ -110,12 +111,10 @@ main {
 }
 
 #quiz-character-image {
-    width: auto;
-	height: inherit;
-    max-width: 100%;
-	max-height: 100%;
-	border-radius: .5rem;
-	
+    object-fit: contain;
+	max-width: 100%;
+	box-sizing: border-box;
+    border-radius: .5rem;
 }
 
 #quiz-character-name {
