@@ -93,7 +93,7 @@ main {
 	overflow-x: hidden;
 }
 
-#quiz-score-wrapper {
+#quiz-title {
     width: 100%;
 	font-size: 1.4rem;
 	color: #252525;
@@ -110,7 +110,7 @@ main {
     font-weight: 600;
 }
 
-#quiz-character-image-wrapper {
+#quiz-primary-area {
     height: calc(100vh - 20rem);
     max-height: 30rem;
     width: 100%;
@@ -129,7 +129,7 @@ main {
     border-radius: .5rem;
 }
 
-#quiz-character-name {
+#quiz-secondary-area {
     width: 100%;
     background-color: #2f2f2f;
     border: .5rem solid #2f2f2f;
@@ -177,7 +177,24 @@ main {
 
 #quiz-propositions button:hover,
 #quiz-propositions button:focus {
-    background-color: brown;
+    background-color: #db9100;
+	border-color: #e7a82d;
+	color: #252525;
+	font-weight: 500;
+}
+
+.right-answer {
+    background-color: #82b017;
+	border-color: #a5cf43;
+	color: #252525;
+	font-weight: 500;
+}
+
+.wrong-anwser {
+    background-color: #c82525;
+	border-color: #e64848;
+	color: white;
+	font-weight: 500;
 }
 
 footer {
@@ -193,4 +210,13 @@ footer {
 footer p {
     font-size: .9rem;
     margin: 0;
+}
+
+footer a {
+    color: #c6870c;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #f0a81a;
 }
