@@ -218,25 +218,25 @@ button {
 	font-weight: 500;
 }
 
-.right-answer {
+#quiz-propositions button.right-answer {
     border-color: #a5cf43;
     background-color: #82b017;
 	color: #252525;
 	font-weight: 500;
 }
 
-.was-right-answer {
+#quiz-propositions button.was-right-answer {
     border-color: #82b017;
 }
 
-.wrong-anwser {
+#quiz-propositions button.wrong-anwser {
     border-color: #e64848;
     background-color: #c82525;
 	color: white;
 	font-weight: 500;
 }
 
-.was-wrong-answer {
+#quiz-propositions button.was-wrong-answer {
     border-color: #c82525;
 }
 
