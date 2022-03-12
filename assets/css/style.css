@@ -94,12 +94,13 @@ main {
 }
 
 #quiz-title {
+    display: grid;
+    grid-template-columns: 1fr auto;
     width: 100%;
 	font-size: 1.4rem;
 	color: #252525;
-	text-align: center;
 	background-color: #c5870c;
-	padding: .4rem;
+	padding: .4rem 1rem;
 	box-sizing: border-box;
 	border-radius: 10px;
 	margin-bottom: 1rem;
@@ -111,7 +112,7 @@ main {
 }
 
 #quiz-primary-area {
-    height: calc(100vh - 20rem);
+    height: calc(100vh - 28rem);
     max-height: 30rem;
     width: 100%;
     background-color: #2f2f2f;
@@ -142,16 +143,20 @@ main {
 
 #quiz-question-wrapper {
     width: 100%;
+    display: flex;
+	gap: 0.8rem;
+    justify-content: center;
+	place-items: center;
     text-align: center;
     background-color: rebeccapurple;
     box-sizing: border-box;
     border-radius: .5rem;
-    padding: 0.4rem 0.6rem 0.6rem;
+    padding: .4rem .6rem .6rem;
 	border: .5rem solid #582c84;
 }
 
 #quiz-question {
-    margin: .2rem 0 .8rem;
+    margin: .2rem 0;
 }
 
 #quiz-propositions {
@@ -163,38 +168,67 @@ main {
 	margin: 0 auto;
 }
 
-#quiz-propositions button {
+button {
     width: 100%;
-    border: 2px solid #797777;
+	border: 2px solid black;
 	font-family: inherit;
-	background-color: #4d4d4d;
-	color: inherit;
-	padding: .4rem;
-	border-radius: .375rem;
-    box-sizing: border-box;
-    cursor: pointer;
+	background-color: black;
+	padding: 0.4rem;
+	border-radius: 0.375rem;
+	box-sizing: border-box;
+	cursor: pointer;
 }
 
-#quiz-propositions button:hover,
-#quiz-propositions button:focus {
+button:hover,
+button:focus {
     background-color: #db9100;
 	border-color: #e7a82d;
 	color: #252525;
 	font-weight: 500;
 }
 
+#main-action {
+	border-color:#b993e1;
+	background-color: #9f76ca;
+	color: #3e1e5e;
+	font-weight: 500;
+	max-width: 22rem;
+}
+
+#main-action.disabled {
+    opacity: .2;
+    pointer-events: none;
+}
+
+#quiz-propositions button {
+    border-color:#797777;
+	background-color: #4d4d4d;
+}
+
+#quiz-propositions button.disabled {
+    pointer-events: none;
+}
+
 .right-answer {
+    border-color: #a5cf43;
     background-color: #82b017;
-	border-color: #a5cf43;
 	color: #252525;
 	font-weight: 500;
 }
 
+.was-right-answer {
+    border-color: #82b017;
+}
+
 .wrong-anwser {
+    border-color: #e64848;
     background-color: #c82525;
-	border-color: #e64848;
 	color: white;
 	font-weight: 500;
+}
+
+.was-wrong-answer {
+    border-color: #c82525;
 }
 
 footer {
