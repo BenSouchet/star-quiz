@@ -33,6 +33,8 @@ header {
 }
 
 header a {
+    position: relative;
+    z-index: 100;
     background-color: #4d4d4d;
 	width: fit-content;
     height: fit-content;
@@ -60,7 +62,7 @@ header img {
 	height: fit-content;
 	padding: 10px 50px 10px 10px;
 	color: #fff;
-	font-weight: 600;
+	font-weight: 500;
 	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
     box-sizing: border-box;
 }
@@ -129,6 +131,14 @@ main {
     box-sizing: border-box;
     text-align: center;
     margin: 1rem 0;
+    font-weight: 500;
+}
+
+#quiz-question-wrapper {
+    width: 100%;
+    background-color: rebeccapurple;
+    box-sizing: border-box;
+    border-radius: .5rem;
 }
 
 footer {
