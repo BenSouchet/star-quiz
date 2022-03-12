@@ -208,7 +208,7 @@ button {
 }
 
 #quiz-propositions button:hover,
-#quiz-propositions button:focus 
+#quiz-propositions button:focus,
 #main-action:hover,
 #main-action:focus {
     background-color: #db9100;
