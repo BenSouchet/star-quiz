@@ -180,14 +180,6 @@ button {
 	cursor: pointer;
 }
 
-button:hover,
-button:focus {
-    background-color: #db9100;
-	border-color: #e7a82d;
-	color: #252525;
-	font-weight: 500;
-}
-
 #main-action {
 	border-color:#b993e1;
 	background-color: #9f76ca;
@@ -208,6 +200,16 @@ button:focus {
 
 #quiz-propositions button.disabled {
     pointer-events: none;
+}
+
+#quiz-propositions button:hover,
+#quiz-propositions button:focus 
+#main-action:hover,
+#main-action:focus {
+    background-color: #db9100;
+	border-color: #e7a82d;
+	color: #252525;
+	font-weight: 500;
 }
 
 .right-answer {
