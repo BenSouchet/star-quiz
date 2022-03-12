@@ -172,6 +172,12 @@ main {
 	padding: .4rem;
 	border-radius: .375rem;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+#quiz-propositions button:hover,
+#quiz-propositions button:focus {
+    background-color: brown;
 }
 
 footer {
