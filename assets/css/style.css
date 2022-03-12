@@ -55,6 +55,11 @@ header img {
     display: none;
 }
 
+a#home-link:hover,
+a#home-link:focus {
+    background-color: #696969;
+}
+
 #github-banner {
     background: url(../images/blacktocat.png) #71449e no-repeat 95% 50%;
 	border-bottom-left-radius: 6px;
