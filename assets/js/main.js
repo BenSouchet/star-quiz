@@ -217,7 +217,7 @@ function _callbackAnswered(event) {
     _updateScoreAndLives();
 
     // Enable main action
-    QUIZ_MAIN_ACTION.classList.add('disabled');  
+    QUIZ_MAIN_ACTION.classList.remove('disabled');  
 }
 
 function _setNewQuestion() {
