@@ -56,7 +56,7 @@ header img {
 }
 
 #github-banner {
-    background: url(../images/blacktocat.png) #c4880c no-repeat 95% 50%;
+    background: url(../images/blacktocat.png) #71449e no-repeat 95% 50%;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	height: fit-content;
@@ -65,6 +65,11 @@ header img {
 	font-weight: 500;
 	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
     box-sizing: border-box;
+}
+header a#github-banner:hover,
+header a#github-banner:focus {
+    text-decoration: underline;
+    padding-top: 16px;
 }
 
 main {
@@ -94,11 +99,11 @@ main {
 	color: #252525;
 	text-align: center;
 	background-color: #c5870c;
-	padding: 0.4rem;
+	padding: .4rem;
 	box-sizing: border-box;
 	border-radius: 10px;
 	margin-bottom: 1rem;
-	border: 0.5rem solid #d09625;
+	border: .5rem solid #d09625;
 }
 
 #quiz-score {
@@ -136,17 +141,43 @@ main {
 
 #quiz-question-wrapper {
     width: 100%;
+    text-align: center;
     background-color: rebeccapurple;
     box-sizing: border-box;
     border-radius: .5rem;
+    padding: .4rem;
+	border: .5rem solid #582c84;
+}
+
+#quiz-question {
+    margin: .2rem 0 .8rem;
+}
+
+#quiz-propositions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    width: 100%;
+    max-height: 22rem;
+}
+
+#quiz-propositions button {
+    width: 100%;
+    border: 2px solid #797777;
+	font-family: inherit;
+	background-color: #4d4d4d;
+	color: inherit;
+	padding: .4rem;
+	border-radius: .375rem;
+    box-sizing: border-box;
 }
 
 footer {
     text-align: center;
     margin: 0 auto;
-	padding: 0.6rem 1.2rem;
+	padding: .6rem 1.2rem;
 	width: fit-content;
-	border-radius: 0.5rem 0.5rem 0 0;
+	border-radius: .5rem .5rem 0 0;
 	background-color: #3e1e5e;
     box-sizing: border-box;
 }
