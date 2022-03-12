@@ -225,8 +225,7 @@ function _setNewQuestion() {
     CURR_QUESTION = CreateQuestion(DATABASE, random_character_index);
     
     // Set front info (DOM)
-    console.log(CURR_QUESTION.image);
-    QUIZ_CHARACTER_IMG.src = CURR_QUESTION.image;
+    QUIZ_CHARACTER_IMG.src = DATABASE.characters[random_character_index].image;
     QUIZ_SUBTITLE.innerText = DATABASE.characters[random_character_index].name;
     QUIZ_QUESTION.innerText = CURR_QUESTION.title;
     QUIZ_PROP1.innerText = CURR_QUESTION.proposition1;
