@@ -210,8 +210,8 @@ button {
 
 #quiz-propositions button:hover,
 #quiz-propositions button:focus,
-#main-action:hover,
-#main-action:focus {
+#main-action:not(.disabled):hover,
+#main-action:not(.disabled):focus {
     background-color: #db9100;
 	border-color: #e7a82d;
 	color: #252525;
@@ -225,19 +225,11 @@ button {
 	font-weight: 500;
 }
 
-#quiz-propositions button.was-right-answer {
-    border-color: #82b017;
-}
-
 #quiz-propositions button.wrong-anwser {
     border-color: #e64848;
     background-color: #c82525;
 	color: white;
 	font-weight: 500;
-}
-
-#quiz-propositions button.was-wrong-answer {
-    border-color: #c82525;
 }
 
 footer {

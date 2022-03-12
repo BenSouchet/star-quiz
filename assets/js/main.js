@@ -177,33 +177,23 @@ function _callbackMainAction() {
     }
 }
 
-function _otherPropositionElem(ElemDOM) {
-    if (ElemDOM.id === 'quiz-proposition1') {
-        return QUIZ_PROP2;
-    }
-    return QUIZ_PROP1;
-}
-
 function _callbackAnswered(event) {
     // Disable propositions
     QUIZ_PROP1.classList.add('disabled');
     QUIZ_PROP2.classList.add('disabled');
 
     const right_answer = (event.currentTarget.innerText === CURR_QUESTION.answer);
-    let otherProp = _otherPropositionElem(event.currentTarget);
 
     // Is it a right answer ?
     if (right_answer) {
         // Set classes for result
         event.currentTarget.classList.add('right-answer');
-        otherProp.classList.add('was-wrong-answer');
 
         // Increment score
         CURR_SCORE += 1;
     } else {
         // Set classes for result
         event.currentTarget.classList.add('wrong-anwser');
-        otherProp.classList.add('was-right-answer');
 
         // Decrement lives
         CURR_LIVES -= 1;
@@ -238,8 +228,8 @@ function _setNewQuestion() {
 
 function newQuestion() {
     // Remove previous result classes
-    QUIZ_PROP1.classList.remove('right-answer', 'was-right-answer', 'wrong-anwser', 'was-wrong-answer');
-    QUIZ_PROP2.classList.remove('right-answer', 'was-right-answer', 'wrong-anwser', 'was-wrong-answer');
+    QUIZ_PROP1.classList.remove('right-answer', 'wrong-anwser');
+    QUIZ_PROP2.classList.remove('right-answer', 'wrong-anwser');
 
     // Disable main action
     QUIZ_MAIN_ACTION.innerText = "NEXT QUESTION";
