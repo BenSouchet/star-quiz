@@ -225,10 +225,10 @@ function _setNewQuestion() {
     CURR_QUESTION = CreateQuestion(DATABASE, random_character_index);
     
     // Set front info (DOM)
-    QUIZ_CHARACTER_IMG.src = question.image;
-    QUIZ_SUBTITLE.innerText = question.title;
-    QUIZ_PROP1.innerText = question.proposition1;
-    QUIZ_PROP2.innerText = question.proposition2;
+    QUIZ_CHARACTER_IMG.src = CURR_QUESTION.image;
+    QUIZ_SUBTITLE.innerText = CURR_QUESTION.title;
+    QUIZ_PROP1.innerText = CURR_QUESTION.proposition1;
+    QUIZ_PROP2.innerText = CURR_QUESTION.proposition2;
 
     // Re-enable propositions
     QUIZ_PROP1.classList.remove('disabled');
