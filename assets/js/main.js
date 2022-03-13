@@ -122,11 +122,9 @@ function _getAnswers(database, character, topic) {
 function CreateQuestion(database, character_index) {
     let question = { 'title': "", 'proposition1': "", 'proposition2': "", 'answer': "" };
     const character = database.characters[character_index];
-    console.log('Character Index : ' + character_index + '. Character Name : ' + character.name);
 
     // Get Topic
     const topic = randomElement(character.properties);
-    console.log('topic: ' + topic);
 
     // Get question title
     const question_title = randomElement(QUESTIONS[topic]);
@@ -274,7 +272,7 @@ function _getimageURL(character) {
 }
 
 function _setNewQuestion() {
-    const random_character_index = 75/*randomIndex(DATABASE.characters.length)*/;
+    const random_character_index = randomIndex(DATABASE.characters.length);
     CURR_QUESTION = CreateQuestion(DATABASE, random_character_index);
     const character = DATABASE.characters[random_character_index];
     
