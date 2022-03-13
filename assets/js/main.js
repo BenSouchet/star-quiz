@@ -212,7 +212,7 @@ function _callbackAnswered(event) {
     QUIZ_MAIN_ACTION.classList.remove('disabled');  
 }
 
-function _fallbackImageMethod(character_serialized_name) {
+function _fallbackgetImageURL(character_serialized_name) {
     const action = 'parse';
     const format = 'json';
     const prop = 'properties';
@@ -228,18 +228,14 @@ function _fallbackImageMethod(character_serialized_name) {
     const url = CORS_BYPASS_PROXY + encodeURIComponent(FALLBACK_IMG_URL + '?' + (new URLSearchParams(params)).toString());
 
     const result = httpGet(url);
-    /*var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", url);
-    xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 
-    xmlHttp.onreadystatechange = function () {
-    if (xmlHttp.readyState === 4) {
-        console.log(xmlHttp.status);
-        console.log(xmlHttp.responseText);
-    }};
-
-    xmlHttp.send();*/
-    console.log(result);
+    const json_response = JSON.parse(result);
+    const json_contents = JSON.parse(json_response.contents);
+    const json_infoboxes = JSON.parse(json_contents.parse.properties.infoboxes);
+    if (json_infoboxes.length > 0 && json_infoboxes[0].data.length > 0) {
+        return json_infoboxes[0].data[0].url;
+    }
+    return null;
 }
 
 function _getimageURL(character) {
@@ -249,7 +245,10 @@ function _getimageURL(character) {
     request.send();
     if (request.status != 200) {
         // Image doesn't exists anymore scrap img from Star Wars Fandom
-        _fallbackImageMethod(character.name.replace(/\s+/g, "_"));
+        const fallback_url = _fallbackgetImageURL(character.name.replace(/\s+/g, "_"));
+        if (fallback_url !== null) {
+            return fallback_url;
+        }
     }
     return image_url;
 }
