@@ -224,7 +224,7 @@ function _fallbackImageMethod(character_serialized_name) {
         'redirects':''
     };
 
-    const url = wookieurl + '?' + (new URLSearchParams(params)).toString();
+    const url = FALLBACK_IMG_URL + '?' + (new URLSearchParams(params)).toString();
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
