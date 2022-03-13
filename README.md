@@ -31,11 +31,17 @@ If you want to create a `TRUE` quiz in JS you need to do some tasks:
 
 With theses modifications the **score**, **lives remaining**, **database** and **question creation** are all on the server. Users will no longer be able to cheat since the answer is never store on the browser.
 
+## Additional Information
+
+Some images were not available (error 404) so I had to use a second API, this isn't a true public API so I had trouble with CORS (Cross-origin resource sharing), this is why in the code I also needed the use of [allOrigins](https://github.com/gnuns/allOrigins), a Github project (from the user [Gnuns](https://github.com/gnuns)) to bypass CORS and be able to get fallback images.  
+This is kind of `hacky` but I haven't found a proper way to find and retrieve images of **Star Wars** characters 🙁.
+
 ## Others Ressouces & Useful links
 
  - [akabab/starwars-api](https://github.com/akabab/starwars-api), the API I used to create the quiz, all the questions has been generated with character data from this API. 
- - [swapi.dev](https://swapi.dev/), second API used for character pictures, only when picture url from the first api was not available.
-
+ - [Star Wars Wiki](https://starwars.fandom.com/wiki/Main_Page), second API used for character pictures, only when picture url from the first api was not available.
+ - [gnuns/allOrigins](https://github.com/gnuns/allOrigins), a Github project to avoid Same-origin policy problems when getting data from others websites.
+ 
 ## Licenses
 
 The **code** present in this repository is under [MIT license](https://github.com/BenSouchet/star-quiz/blob/main/LICENSE).
