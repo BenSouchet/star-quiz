@@ -233,6 +233,14 @@ function _fallbackgetImageURL(character_serialized_name) {
     const json_contents = JSON.parse(json_response.contents);
     const json_infoboxes = JSON.parse(json_contents.parse.properties.infoboxes);
     if (json_infoboxes.length > 0 && json_infoboxes[0].data.length > 0) {
+        for (element of json_infoboxes[0].data) {
+            if (element.type === "image") {
+                if (element.data.length > 0) {
+                    return element.data[0].url;
+                }
+                break;
+            }
+        }
         return json_infoboxes[0].data[0].url;
     }
     return null;
