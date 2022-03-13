@@ -1,4 +1,5 @@
 const API_URL = "https://rawcdn.githack.com/akabab/starwars-api/0.2.1/api/all.json";
+const FALLBACK_IMG_URL = "https://starwars.fandom.com/api.php";
 const NB_LIVES = 3;
 
 let QUIZ_SCORE;
@@ -210,12 +211,52 @@ function _callbackAnswered(event) {
     QUIZ_MAIN_ACTION.classList.remove('disabled');  
 }
 
+function _fallbackImageMethod(character_serialized_name) {
+    const action = 'parse';
+    const format = 'json';
+    const prop = 'properties';
+    let params = {
+        'action': action,
+        'format': format,
+        'prop': prop,
+        'page': character_serialized_name,
+        'formatversion': '2',
+        'redirects':''
+    };
+
+    const url = wookieurl + '?' + (new URLSearchParams(params)).toString();
+
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xmlHttp.open("GET", url);
+
+    xmlHttp.onreadystatechange = function () {
+    if (xmlHttp.readyState === 4) {
+        console.log(xmlHttp.status);
+        console.log(xmlHttp.responseText);
+    }};
+
+    xmlHttp.send();
+}
+
+function _getimageURL(character) {
+    let image_url = character.image;
+    let request = new XMLHttpRequest();
+    request.open('HEAD', image_url, false);
+    request.send();
+    if (request.status != 200) {
+        // Image doesn't exists anymore scrap img from Star Wars Fandom
+        _fallbackImageMethod(character.name.replace(/\s+/g, "_"));
+    }
+    return image_url;
+}
+
 function _setNewQuestion() {
     const random_character_index = randomIndex(DATABASE.characters.length);
     CURR_QUESTION = CreateQuestion(DATABASE, random_character_index);
     
     // Set front info (DOM)
-    QUIZ_CHARACTER_IMG.src = DATABASE.characters[random_character_index].image;
+    QUIZ_CHARACTER_IMG.src = _getimageURL(character);
     QUIZ_SUBTITLE.innerText = DATABASE.characters[random_character_index].name;
     QUIZ_QUESTION.innerText = CURR_QUESTION.title;
     QUIZ_PROP1.innerText = CURR_QUESTION.proposition1;
