@@ -1,5 +1,5 @@
 const API_URL = "https://rawcdn.githack.com/akabab/starwars-api/0.2.1/api/all.json";
-const CORS_BYPASS_PROXY = "https://thingproxy.freeboard.io/fetch/";
+const CORS_BYPASS_PROXY = "https://api.allorigins.win/get?url=";
 const FALLBACK_IMG_URL = "https://starwars.fandom.com/api.php";
 const NB_LIVES = 3;
 
@@ -225,7 +225,7 @@ function _fallbackImageMethod(character_serialized_name) {
         'redirects':''
     };
 
-    const url = CORS_BYPASS_PROXY + FALLBACK_IMG_URL + '?' + (new URLSearchParams(params)).toString();
+    const url = CORS_BYPASS_PROXY + encodeURIComponent(FALLBACK_IMG_URL + '?' + (new URLSearchParams(params)).toString());
 
     json_str = httpGet(url);
     /*var xmlHttp = new XMLHttpRequest();
