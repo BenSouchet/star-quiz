@@ -227,7 +227,7 @@ function _fallbackImageMethod(character_serialized_name) {
 
     const url = CORS_BYPASS_PROXY + encodeURIComponent(FALLBACK_IMG_URL + '?' + (new URLSearchParams(params)).toString());
 
-    json_str = httpGet(url);
+    const result = httpGet(url);
     /*var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url);
     xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -239,7 +239,7 @@ function _fallbackImageMethod(character_serialized_name) {
     }};
 
     xmlHttp.send();*/
-    console.log(json_str);
+    console.log(result);
 }
 
 function _getimageURL(character) {
