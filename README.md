@@ -20,7 +20,8 @@ The JS code is [located here](https://github.com/BenSouchet/star-quiz/blob/gh-pa
 
 ## Disclaimer
 
-Small project done fon fun, users can cheat with breakpoints in the JS file. The code do the strict minimum, without trying to be optimized or protected against cheating.
+Small project done for fun, I know that users can cheat with breakpoints in the JS file.  
+The code do the strict minimum, without trying to be optimized or protected against cheating.
 
 If you want to create a `TRUE` quiz in JS you need to do some tasks:
  - All database related function need to move on a backend server.
