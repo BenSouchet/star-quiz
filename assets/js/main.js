@@ -252,7 +252,7 @@ function _getimageURL(character) {
 }
 
 function _setNewQuestion() {
-    const random_character_index = randomIndex(DATABASE.characters.length);
+    const random_character_index = 75/*randomIndex(DATABASE.characters.length)*/;
     CURR_QUESTION = CreateQuestion(DATABASE, random_character_index);
     const character = DATABASE.characters[random_character_index];
     
