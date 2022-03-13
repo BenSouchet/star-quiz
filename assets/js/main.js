@@ -254,10 +254,11 @@ function _getimageURL(character) {
 function _setNewQuestion() {
     const random_character_index = randomIndex(DATABASE.characters.length);
     CURR_QUESTION = CreateQuestion(DATABASE, random_character_index);
+    const character = DATABASE.characters[random_character_index];
     
     // Set front info (DOM)
     QUIZ_CHARACTER_IMG.src = _getimageURL(character);
-    QUIZ_SUBTITLE.innerText = DATABASE.characters[random_character_index].name;
+    QUIZ_SUBTITLE.innerText = character.name;
     QUIZ_QUESTION.innerText = CURR_QUESTION.title;
     QUIZ_PROP1.innerText = CURR_QUESTION.proposition1;
     QUIZ_PROP2.innerText = CURR_QUESTION.proposition2;
