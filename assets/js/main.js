@@ -236,12 +236,24 @@ function _fallbackgetImageURL(character_serialized_name) {
         for (element of json_infoboxes[0].data) {
             if (element.type === "image") {
                 if (element.data.length > 0) {
-                    return element.data[0].url;
+                    const image_url = element.data[0].url;
+                    if (image_url.indexOf('.png/') > -1) {
+                        return image_url.substring(0, s.indexOf('.png/') + 5);
+                    } else if (image_url.indexOf('.jpg/') > -1) {
+                        return image_url.substring(0, s.indexOf('.jpg/') + 5);
+                    } else if (image_url.indexOf('.jpeg/') > -1) {
+                        return image_url.substring(0, s.indexOf('.jpeg/') + 6);
+                    } else if (image_url.indexOf('.PNG/') > -1) {
+                        return image_url.substring(0, s.indexOf('.PNG/') + 5);
+                    } else if (image_url.indexOf('.jpg/') > -1) {
+                        return image_url.substring(0, s.indexOf('.JPG/') + 5);
+                    } else if (image_url.indexOf('.JPEG/') > -1) {
+                        return image_url.substring(0, s.indexOf('.JPEG/') + 6);
+                    }
                 }
                 break;
             }
         }
-        return json_infoboxes[0].data[0].url;
     }
     return null;
 }
