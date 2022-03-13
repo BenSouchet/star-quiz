@@ -227,8 +227,8 @@ function _fallbackImageMethod(character_serialized_name) {
     const url = FALLBACK_IMG_URL + '?' + (new URLSearchParams(params)).toString();
 
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xmlHttp.open("GET", url);
+    xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 
     xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState === 4) {
